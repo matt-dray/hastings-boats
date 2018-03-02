@@ -1,6 +1,7 @@
+# Hastings boats
 # Read and tidy the data
 # Matt Dray
-# Jan 3 2018
+# March
 
 # TODO --------------------------------------------------------------------
 
@@ -22,7 +23,7 @@ library(tidyr)
 
 # Read data ---------------------------------------------------------------
 
-boats_raw <- readr::read_excel(
+boats_raw <- readxl::read_excel(
   path = "data/boat_database.xlsm",
   sheet = "boat database",
   skip = 1,
