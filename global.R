@@ -1,4 +1,5 @@
 library(dplyr)
 library(ggplot2)
 library(readr)
-boats_clean <- read_rds("output/boats_clean.rds")
+library(DT)
+boats_clean <- readr::read_rds("output/boats_clean.rds")

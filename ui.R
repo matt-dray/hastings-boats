@@ -1,12 +1,16 @@
+# User interface
+
 fluidPage(
   
-  titlePanel("Hastings fishing boats"),
+  titlePanel(paste("Hastings fishing boats", emo::ji("fish"))),
   
   sidebarLayout(
     
     # SIDEBAR ----
     
     sidebarPanel(
+      
+      width = 2,
       
       # DROPDOWN: SELECT BOAT NAME ----
       
@@ -43,28 +47,31 @@ fluidPage(
         tabPanel(
           title = "Summary",
           h3(textOutput("selected_boat")),
+          h3(textOutput("selected_boat_reg")),
           h3(textOutput("selected_range"))
-        ),
+        ),  # end of tabPanel
         
         # TAB 2 ----
         
         tabPanel(
           title = "Plot",
           plotOutput("plot_weight_length")
-        ),
+        ),  # end of tabPanel
         
         # TAB 3 ----
         
         tabPanel(
-          title = "Table"
-        ),
+          "The data table",
+          DT::dataTableOutput("fancyTable")
+        ),  # end of tabPanel
         
         # TAB 4 ----
         
         tabPanel(
           title = "Information"
-        )
-      )
-    )
-  )
-)
+        )  # end of tabPanel
+        
+      )  # end of tabsetPanel
+    )  # end of mainPanel
+  )  # end of sidebarLayout
+)  # end of fluidPage

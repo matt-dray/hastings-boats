@@ -22,7 +22,7 @@ library(tidyr)
 
 # Read data ---------------------------------------------------------------
 
-boats_raw <- read_excel(
+boats_raw <- readr::read_excel(
   path = "data/boat_database.xlsm",
   sheet = "boat database",
   skip = 1,
@@ -33,7 +33,7 @@ boats_raw <- read_excel(
 
 boats_clean <- boats_raw %>%
   # select and rename variables
-  select(
+  dplyr::select(
     reg_number = No.,
     reg_port = `Port Reg.`,
     boat_name = `Boat Name`,
@@ -53,7 +53,7 @@ boats_clean <- boats_raw %>%
     notes = `Fate / Notes`
   ) %>% 
   # add new columns and alter others
-  mutate(
+  dplyr::mutate(
     # full registration code
     reg_full = if_else(
       !is.na(reg_number) & !is.na(reg_port),
@@ -113,10 +113,10 @@ boats_clean <- boats_raw %>%
     )
   ) %>% 
   # change dates to numeric
-  mutate_at(vars("date_sig", "date_built"), funs(as.numeric(.))) %>% 
+  dplyr::mutate_at(vars("date_sig", "date_built"), funs(as.numeric(.))) %>% 
   # NAs
-  mutate_all(funs(na_if(., "NA")))
+  dplyr::mutate_all(funs(na_if(., "NA")))
 
 # Save dataframe ----------------------------------------------------------
 
-#write_rds(boats_clean, "output/boats_clean.rds")
+# readr::write_rds(boats_clean, "output/boats_clean.rds")
