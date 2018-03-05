@@ -1,6 +1,6 @@
 ---
 title: "Hastings boats"
-subtitle: ""
+subtitle: "Exploring the data for presentation in a Shiny app"
 author: "Matt Dray"
 date: "March 2018"
 output:
@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, error = FALSE, message = FALSE)
 ```
 
 # Prepare the environment
