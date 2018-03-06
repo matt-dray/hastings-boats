@@ -7,5 +7,6 @@ library(dplyr)  # data manipulation and pipes (%>%)
 library(ggplot2)  # plot with ggplot
 library(DT)  # for fancy datatables
 library(emo)  # emoji
+library(shinythemes)  # themes
 
 boats_clean <- readRDS("output/boats_clean.rds")  # precleaned data
