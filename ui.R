@@ -107,6 +107,21 @@ navbarPage(
     
   ),  # end of tabPanel
   
+  # NAV BAR: SUMMARIES ----
+  
+  # tags$head(tags$style(HTML("
+  #                              body {
+  #                           width: 100% !important;
+  #                           max-width: 100% !important;
+  #                           }
+  #                           
+  #                           "))),
+  
+  tabPanel(
+    title = "Data summary",
+    uiOutput("rmarkdown_summary")
+  ),
+  
   # NAV BAR: ABOUT THE APP ----
   
   tabPanel(

@@ -1,27 +1,17 @@
 ---
 title: "Hastings boats"
-subtitle: "Exploring the data for presentation in a Shiny app"
-author: "Matt Dray"
-date: "March 2018"
-output:
-  html_document:
-    theme: spacelab
-    highlight: tango
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
+output: html_document
 ---
 
+<style>
+    body .main-container {
+        max-width: 1000px;
+    }
+</style>
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, error = FALSE, message = FALSE)
-```
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, error = FALSE, message = FALSE, echo = FALSE)
 
-# Prepare the environment
-
-Prepare the environment by loading packages and reading in the data.
-
-```{r}
 # packages
 library(ggplot2)
 library(janitor)
@@ -29,10 +19,10 @@ library(ggplot2)
 library(knitr)
 
 # cleaned boat data
-boats_clean <- readr::read_rds("output/boats_clean.rds")
+#boats_clean <- readr::read_rds("output/boats_clean.rds")
 
 # inspect data
-dplyr::glimpse(boats_clean)
+#dplyr::glimpse(boats_clean)
 ```
 
 # Summary tables
@@ -58,7 +48,9 @@ boats_still_fishing %>% knitr::kable()
 
 
 ```{r}
-boats_clean %>% janitor::tabyl(still_on_stade)
+boats_clean %>%
+  janitor::tabyl(still_on_stade) %>% 
+  knitr::kable()
 ```
 
 ```{r}

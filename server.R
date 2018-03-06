@@ -68,7 +68,7 @@ function(input, output) {
       )
   })
   
-  # TABLE: datatable of the dataset ----
+  # TABLE: DATATABLE ----
   
   output$fancyTable <- DT::renderDataTable({
     datatable(
@@ -148,5 +148,13 @@ function(input, output) {
     ) # end of datatable
     
   }) # end of renderDataTable
+  
+  # RMARKDOWN: SUMMARY
+  
+  output$rmarkdown_summary <- renderUI({
+    HTML(markdown::markdownToHTML(
+      knitr::knit("summaries.Rmd", quiet = TRUE),
+      fragment.only=TRUE))  # prevents resizing of app
+  })
   
 }
