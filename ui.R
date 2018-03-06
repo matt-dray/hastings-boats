@@ -7,6 +7,17 @@ navbarPage(
   theme = "united",
   paste("Hastings fishing boats", emo::ji("fish")),
   
+  
+  tabPanel(
+    "About",
+    h3("Hastings boats"),
+    HTML("This app allows for exploration of the Hastings Fishing Boat Database kept by the <a href='http://www.ohps.org.uk/hastings-fishermans-museum/'>Hastings Fishermens' Museum</a> run by the <a href='http://www.ohps.org.uk'>Old Hastings Preservation Society</a>."),
+    p(paste(emo::ji("construction"), "This app is under development", emo::ji("construction"))),
+    HTML("<p><img src='3761647380_731890690f_o.jpg' alt='Bridget McKenzie' width='1000'>"),
+    HTML("<br>Photo by <a href='https://www.flickr.com/photos/bridgetmckenz/3761647380/in/photolist-6JpqHj-o7sicm-78NUgD-WMrKFA-Dr9rMc-9j1tCM-a2juLU-2DWm9-5pUbJd-cy1aLb-bK98tF-eN1hQu-K13EV-s3Y5BF-8QUExi-NT9DP-7TwHdL-78MXvD-5cs6Gm-5cnL2V-5ADihe-6Qda3V-pybsLH-9Bx7eY-qEvXZU-B6dv97-Hd2iN-6w8QoM-5cs7Wh-6JNXA-qdowgJ-6UYMAf-539AB-dwcCdh-3RCmxY-e4cB8E-6Qhe89-5pTTV5-6JKh2-BpTdSq-5cnQMz-5AHDVb-f36Tvk-5pPx1v-gXAX2G-8yrHGU-rLthTw-5pU8wu-HEVKmF-78eB52'>Bridget McKenzie</a> <a href='https://creativecommons.org/licenses/by-nc/2.0/'>CC BY-NC 2.0</a> (no changes made)")
+    ),
+  
+  
   # NAV BAR 1: BOATS
   
   tabPanel(
@@ -57,19 +68,19 @@ navbarPage(
           # TAB 1: BOAT SELECT ----
           
           tabPanel(
-            title = "Boat select",
+            title = "Overview",
             h3(textOutput("selected_boat")),
-            h3(textOutput("selected_boat_reg")),
-            h3(textOutput("selected_range")),
-            plotOutput("plot_weight_length")
+            h3(textOutput("selected_boat_reg"))
+            #h3(textOutput("selected_range")),
+            
           ),  # end of tabPanel
           
           # TAB 2: EXPLORE DATA ----
           
           tabPanel(
-            title = "Explore data",
-            "placeholder text"
-            #DT::dataTableOutput("fancyTable")
+            title = "Dimensions",
+            "placeholder text",
+            plotOutput("plot_weight_length")
           )  # end of tabPanel
           
         )  # end of tabsetPanel
@@ -107,15 +118,19 @@ navbarPage(
   
   tabPanel(
     title = "About the app",
-    HTML("<h4>Tools</h4>
-         <ul>
+    paste(emo::ji("construction"), "This app is under development", emo::ji("construction")),
+    h4("Tools"),
+    HTML("<ul>
            <li>R v3.4.3</li>
            <li>RStudio v1.1.423</li>
            <li><code>shiny</code> package</li>
            <li><code>DT</code> package</li>
            <li><code>dplyr</code>package</li>
+           <li><code>emo</code>package</li>
          </ul>"
-    )
+    ),
+    h4("Author"),
+    HTML("Matt Dray")
   )  # end of tabPanel
   
 )  # end of navbarPage

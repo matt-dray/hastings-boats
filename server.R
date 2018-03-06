@@ -26,10 +26,10 @@ function(input, output) {
   
   # TEXT: YEAR RANGE ----
   
-  output$selected_range <- renderText({ 
-    paste("You have chosen a range that goes from",
-          input$range[1], "to", input$range[2])
-  })
+  # output$selected_range <- renderText({ 
+  #   paste("You have chosen a range that goes from",
+  #         input$range[1], "to", input$range[2])
+  # })
   
   # PLOT: LENGTH x WEIGHT ----
   
