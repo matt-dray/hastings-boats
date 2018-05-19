@@ -1,6 +1,8 @@
 # hastings-boats
 A Shiny app for the Hastings fishing boat database
 
+:construction: Under development :construction:
+
 # TL;DR
 
 The [Hastings Fishermen's Museum](http://www.ohps.org.uk/hastings-fishermans-museum/) hosts a physical copy of a fishing boat dataset. I aim to clean the data and make it more accesisble via an [R Shiny app](https://www.rstudio.com/products/shiny/).
