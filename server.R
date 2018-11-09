@@ -71,6 +71,7 @@ function(input, output) {
   # TABLE: DATATABLE ----
   
   output$fancyTable <- DT::renderDataTable({
+    
     datatable(
       data = arrange(  # to arrange by date_built
         mutate(  # DT::datatable provides dropdowns for factors
@@ -122,18 +123,23 @@ function(input, output) {
         "On Stade" = "still_on_stade",
         "Still fishing" = "still_fishing"
       ),
+      
       filter = "top",
       extensions = 'Buttons',
       options = list(
         autoWidth = TRUE,  # column width consistent when making selections
         dom = "Blfrtip",
-        buttons = 
-          list("copy", list(
-            extend = "collection",
-            buttons = c("csv", "excel", "pdf"),
-            text = "Download"
-          ) 
-          ), # end of buttons customization
+        columnDefs = list(
+          list(
+            visible = FALSE,
+            targets = c(4, 5, 8, 14, 15)
+          )
+        ), 
+        buttons = list(
+          I("colvis"),  # turn columns on and off
+          "csv",  # download as .csv
+          "excel"  # download as .xlsx
+        ), # end of buttons customization
         
         # customize the length menu
         lengthMenu = list(
