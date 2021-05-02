@@ -3,7 +3,7 @@ title: "Explore Hastings Fishing Boats"
 subtitle: "Work in Progress"
 output:
   html_document:
-    css: ["styles/styles.css", "styles/fonts.css"]
+    css: ["../styles/styles.css", "../styles/fonts.css"]
 ---
 
 ```{r setup, include=FALSE}
