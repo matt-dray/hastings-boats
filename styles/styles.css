@@ -1,0 +1,14 @@
+.title {
+  color: #FF0000;
+}
+
+.subtitle {
+  color: #808080;
+  font-size: 18px;
+}
+
+div.main-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}

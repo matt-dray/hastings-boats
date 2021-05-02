@@ -1,0 +1,74 @@
+---
+title: "Explore Hastings Fishing Boats"
+subtitle: "Work in Progress"
+output:
+  html_document:
+    css: ["styles/styles.css", "styles/fonts.css"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r prep}
+library(crosstalk)
+library(dplyr)
+library(here)
+library(reactable)
+library(readr)
+
+boats_simple <- read_rds(here("output", "boats-simple.rds"))
+boats_sd <- SharedData$new(boats_simple)
+```
+
+---
+
+```{r crosstalk-filters}
+bscols(
+    filter_slider(
+      "build_year", "Build year", boats_sd, 
+      ~as.integer(`Build year`),
+      width = "100%", step = 1, round = TRUE, ticks = FALSE, sep = ""
+    ),
+    filter_slider(
+      "length", "Length", boats_sd, 
+      ~Length,
+      width = "100%", step = 1, round = TRUE, ticks = FALSE
+    ),
+    filter_slider(
+      "weight", "Weight", boats_sd, 
+      ~Weight,
+      width = "100%", step = 1, round = TRUE, ticks = FALSE
+    ),
+    filter_select(
+      "build_location", "Build location", boats_sd,
+      ~`Build location`
+    )
+)
+```
+
+---
+
+```{r reactable-flat}
+reactable(
+  boats_sd,
+  defaultSorted = c("Name", "Build year"),
+  # searchable = TRUE, 
+  # filterable = TRUE,
+  paginationType = "jump", 
+  showPageSizeOptions = TRUE,
+  defaultColDef = colDef(na = "—",),
+  columns = list(
+    Weight = colDef(html = TRUE, header = JS(
+      "function(colInfo) {
+        return colInfo.column.name + '<div style=\"color: #999\">tonnes</div>'
+        }")),
+    Length = colDef(html = TRUE, header = JS(
+      "function(colInfo) { 
+        return colInfo.column.name + '<div style=\"color: #999\">metres</div>' 
+        }"))
+  )
+)
+```
+
+<center>`r emo::ji("fish")` Data via [Hastings Fishermen's Museum](https://www.ohps.org.uk/hastings-fishermans-museum/)</center>

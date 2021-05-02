@@ -1,7 +1,13 @@
 # hastings-boats
 
-[![Project Status: Suspended – Initial development has started, but there has not yet been a stable, usable release; work has been stopped for the time being but the author(s) intend on resuming work.](https://www.repostatus.org/badges/latest/suspended.svg)](https://www.repostatus.org/#suspended)
+Under construction: explore the Hastings fishing boat database. You can [view online the (in-development) interactive table](https://matt-dray.github.io/hastings-boats/).
 
-An [R Shiny web app](https://shiny.rstudio.com/) to present historical fishing-boat data for Hastings, East Sussex, UK.
+The [Hastings Fishermen's Museum](http://www.ohps.org.uk/hastings-fishermans-museum/) hosts a physical copy of the town's fishing-boat database. The purpose of this repo is to tidy the data and present it for people to more explore it more easily.
 
-The data were collected originally by Steve Peak as a supplement to his book [*Fishermen of Hastings*](https://www.amazon.co.uk/Fishermen-Hastings-Steve-Peak/dp/B0054WJXN4). A physical copy of the data are available in the [Hastings Fishermen's Museum](http://www.ohps.org.uk/hastings-fishermans-museum/).
+The database was collated by Steve Peak as a supplement to his book [*Fishermen of Hastings*](https://www.amazon.co.uk/Fishermen-Hastings-Steve-Peak/dp/B0054WJXN4).
+
+For more on Fishing in Hastings, see:
+
+* the Old Hastings Preservation Society pages on the [Fishermen's Museum](http://www.ohps.org.uk/hastings-fishermans-museum/)
+* the [Hastings Fish website](http://www.hastings-fish.co.uk/index.htm)
+* fishing community photographs on [1066 Online](http://www.1066online.co.uk/gallery/fishing-community)
